@@ -27,7 +27,7 @@ def FloorInBST(root, target):
         return root.val
     
     # easier recursive case: current is greater than target
-    if root.val > target:
+    if root.val > target: # TODO: fix floor part of searching
         return FloorInBST(root.left, target)
     
     # harder recursive case: current is smaller than target - need to keep in mind floor
@@ -48,9 +48,8 @@ root.left.right = Node(9)
 root.right.left = Node(13)
 root.right.right = Node(17)
 root.right.right.right = Node(20)
+root.right.right.right.right = Node(100)
 
 # PRINT FLOOR IN BST 
-print(FloorInBST(root, 14))
-
-# [7,8,9,20,15]
+print(FloorInBST(root, 1000))
     
